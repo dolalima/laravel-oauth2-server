@@ -203,7 +203,7 @@ return [
         /*
          * OAuth2 aliases
          */
-        'Authorizer' => LucaDegasperi\OAuth2Server\Facades\Authorizer::class,
+        'Authorizer' => 'LucaDegasperi\OAuth2Server\Facades\Authorizer'
 
     ],
 

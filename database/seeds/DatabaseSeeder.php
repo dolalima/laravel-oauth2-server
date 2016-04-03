@@ -16,6 +16,13 @@ class DatabaseSeeder extends Seeder
 
         // $this->call(UserTableSeeder::class);
 
+        factory(\App\User::class)->create([
+            'name' => 'Dola Lima',
+            'email' => 'dolalima@gmail.com',
+            'password' => bcrypt('lima1807'),
+            'remember_token' => str_random(10),
+        ]);
+
         Model::reguard();
     }
 }

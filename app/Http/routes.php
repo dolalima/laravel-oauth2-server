@@ -14,3 +14,11 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::post('oauth/access_token',function(){
+    return Response::json(Authorizer::issueAccessToken());
+});
+
+Route::group(['before'=>'oauth'],function(){
+    Route::resource('post','ApiController',['except' => ['create','edit']]);
+});
