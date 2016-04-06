@@ -22,3 +22,10 @@ Route::post('oauth/access_token',function(){
 Route::group(['before'=>'oauth'],function(){
     Route::resource('post','ApiController',['except' => ['create','edit']]);
 });
+
+Route::get('home', 'HomeController@index');
+
+Route::controllers([
+    'auth' => 'Auth\AuthController',
+    'password' => 'Auth\PasswordController',
+]);
