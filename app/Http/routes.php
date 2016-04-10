@@ -25,6 +25,10 @@ Route::group(['before'=>'oauth'],function(){
 
 Route::get('home', 'HomeController@index');
 
+Route::get('api/users/{id}','Api\UserApiController@getById');
+Route::get('api/users/byUser/{username}','Api\UserApiController@getByUser');
+Route::get('api/users','Api\UserApiController@getAll');
+
 Route::controllers([
     'auth' => 'Auth\AuthController',
     'password' => 'Auth\PasswordController',
