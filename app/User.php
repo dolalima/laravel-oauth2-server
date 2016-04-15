@@ -17,10 +17,10 @@ class User extends Model implements AuthenticatableContract,
     use Authenticatable, Authorizable, CanResetPassword;
 
     /**
-     * The database table used by the model.
-     *
-     * @var string
-     */
+ * The database table used by the model.
+ *
+ * @var string
+ */
     protected $table = 'users';
 
     /**
@@ -36,4 +36,12 @@ class User extends Model implements AuthenticatableContract,
      * @var array
      */
     protected $hidden = ['password', 'remember_token'];
+
+
+    /*
+     * @var State
+     */
+    public function state(){
+        return $this->hasOne('state');
+    }
 }
